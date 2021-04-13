@@ -1,13 +1,13 @@
 import SpriteKit
 
-public class GameScene2: SKScene {
+public class TopsShop: SKScene {
 
     var selectedTop: SKSpriteNode?
     lazy var capSleeveShirt = childNode(withName: "capSleeveShirt") as! SKSpriteNode
     lazy var cottonTshirt = childNode(withName: "cottonTshirt") as! SKSpriteNode
     lazy var knitPullover = childNode(withName:"knitPullover") as! SKSpriteNode
     lazy var nextButton = childNode(withName:"nextButton") as! SKSpriteNode
-    
+
     public override func didMove(to view: SKView){
         let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
         capSleeveShirt.run(fadeInAction)
@@ -24,32 +24,37 @@ public class GameScene2: SKScene {
         }
     }
 
-    // Shows first balloon with message "Hi" (default)
+    // Lets the user select a top item and allows clicking on the "next" button.
     func touchDown(atPoint pos : CGPoint) {
         if capSleeveShirt.contains(pos) && capSleeveShirt.alpha == 1{
+            //capSleeveShirt.alpha = 0
             selectedTop = capSleeveShirt
-        } else if cottonTshirt.contains(pos) && capSleeveShirt.alpha == 1{
-            selectedTop = cottonTshirt
+        } else if cottonTshirt.contains(pos) && cottonTshirt.alpha == 1{
+            cottonTshirt.alpha = 0
+            // selectedTop = cottonTshirt
         } else if knitPullover.contains(pos) && knitPullover.alpha == 1{
-            selectedTop = knitPullover
+            knitPullover.alpha = 0
+            //selectedTop = knitPullover
         }
+
         if selectedTop != nil{
             nextButton.alpha = 1
         }
-        if nextButton.alpha == 1{
-            if let nextGameScene = GameScene3(fileNamed: "GameScene3") {
+
+        if nextButton.contains(pos){
+            if let nextGameScene = BottomsShop(fileNamed: "BottomsShop") {
               nextGameScene.scaleMode = .aspectFit
               self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
             }
         }
     }
-    
+
     func touchMoved(toPoint pos : CGPoint) {
-      
+
     }
 
     func touchUp(atPoint pos : CGPoint) {
-      
+
     }
 
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -72,3 +77,5 @@ public class GameScene2: SKScene {
         // Called before each frame is rendered
     }
 }
+
+

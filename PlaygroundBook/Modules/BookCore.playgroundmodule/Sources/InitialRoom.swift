@@ -1,5 +1,10 @@
 import SpriteKit
 
+//public class selectedItem {
+//    static var selectedTop: SKSpriteNode?
+//    static var selectedBottom: SKSpriteNode?
+//}
+
 public class GameScene: SKScene {
 
     lazy var balloon = childNode(withName: "balloon") as! SKSpriteNode
@@ -32,7 +37,7 @@ public class GameScene: SKScene {
             text.text = dialogs.first
             if dialogs.isEmpty {
                 balloon.removeFromParent()
-                if let nextGameScene = GameScene2(fileNamed: "GameScene2") {
+                if let nextGameScene = TopsShop(fileNamed: "TopsShop") {
                   nextGameScene.scaleMode = .aspectFit
                   self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
                 }
