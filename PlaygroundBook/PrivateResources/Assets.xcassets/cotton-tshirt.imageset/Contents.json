@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "dog.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "cotton-tshirt.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

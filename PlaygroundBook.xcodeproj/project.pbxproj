@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F7122526261C3B006D06CF /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F7122426261C3B006D06CF /* GameScene2.sks */; };
+		11F7123126263388006D06CF /* GameScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7123026263380006D06CF /* GameScene2.swift */; };
 		447A265B2600305100C533BC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 447A265A2600305100C533BC /* GameScene.sks */; };
 		447A2678260036B500C533BC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447A2677260036B500C533BC /* GameScene.swift */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
@@ -117,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11F7122426261C3B006D06CF /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
+		11F7123026263380006D06CF /* GameScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene2.swift; sourceTree = "<group>"; };
 		447A265A2600305100C533BC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		447A2677260036B500C533BC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* MeuPlaygroundLegal.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeuPlaygroundLegal.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +287,7 @@
 			children = (
 				5EF2F9AD2054BBF300191409 /* LiveViewController.swift */,
 				5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */,
+				11F7123026263380006D06CF /* GameScene2.swift */,
 				447A2677260036B500C533BC /* GameScene.swift */,
 			);
 			path = Sources;
@@ -330,6 +335,7 @@
 			children = (
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				447A265A2600305100C533BC /* GameScene.sks */,
+				11F7122426261C3B006D06CF /* GameScene2.sks */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
 				5E551EC42371FC3F00784365 /* Assets.xcassets */,
 			);
@@ -475,6 +481,7 @@
 			files = (
 				447A265B2600305100C533BC /* GameScene.sks in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				11F7122526261C3B006D06CF /* GameScene2.sks in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
 			);
@@ -549,6 +556,7 @@
 			files = (
 				447A2678260036B500C533BC /* GameScene.swift in Sources */,
 				5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */,
+				11F7123126263388006D06CF /* GameScene2.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
