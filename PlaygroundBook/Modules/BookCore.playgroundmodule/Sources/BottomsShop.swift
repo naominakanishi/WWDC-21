@@ -1,19 +1,32 @@
 import SpriteKit
 
 public class BottomsShop: SKScene {
-
+    
     var selectedBottom: SKSpriteNode?
     lazy var crepeTrousers = childNode(withName: "crepeTrousers") as! SKSpriteNode
     lazy var skinnyJeans = childNode(withName: "skinnyJeans") as! SKSpriteNode
     lazy var tailorPants = childNode(withName:"tailorPants") as! SKSpriteNode
     lazy var nextButton = childNode(withName:"nextButton") as! SKSpriteNode
-    
+    lazy var mannequinCapSleeves = childNode(withName: "mannequinCapSleeves") as! SKSpriteNode
+    lazy var mannequinCottonTshirt = childNode(withName: "mannequinCottonTshirt") as! SKSpriteNode
+    lazy var mannequinKnitPullover = childNode(withName: "mannequinKnitPullover") as! SKSpriteNode
+    lazy var crepeTrousersSelect = childNode(withName: "crepeTrousersSelect") as! SKSpriteNode
+    lazy var skinnyJeansSelect = childNode(withName: "skinnyJeansSelect") as! SKSpriteNode
+    lazy var tailorPantsSelect = childNode(withName: "tailorPantsSelect") as! SKSpriteNode
     
     public override func didMove(to view: SKView){
         let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
         crepeTrousers.run(fadeInAction)
         skinnyJeans.run(fadeInAction)
         tailorPants.run(fadeInAction)
+        if selectedTop?.name == "capSleeveShirt" {
+            mannequinCapSleeves.alpha = 1
+        } else if selectedTop?.name == "cottonTshirt"{
+            mannequinCottonTshirt.alpha = 1
+        } else if selectedTop?.name == "knitPullover"{
+            mannequinKnitPullover.alpha = 1
+        }
+        
     }
 
     //text.text = "frase aqui"
@@ -29,10 +42,13 @@ public class BottomsShop: SKScene {
   func touchDown(atPoint pos : CGPoint) {
         if crepeTrousers.contains(pos) && crepeTrousers.alpha == 1{
             selectedBottom = crepeTrousers
+            crepeTrousersSelect.alpha = 1
         } else if skinnyJeans.contains(pos) && skinnyJeans.alpha == 1{
             selectedBottom = skinnyJeans
+            skinnyJeansSelect.alpha = 1
         } else if tailorPants.contains(pos) && tailorPants.alpha == 1{
             selectedBottom = tailorPants
+            tailorPantsSelect.alpha = 1
         }
         if selectedBottom != nil{
             nextButton.alpha = 1
