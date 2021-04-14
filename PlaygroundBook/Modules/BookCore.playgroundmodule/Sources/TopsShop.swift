@@ -31,10 +31,10 @@ public class TopsShop: SKScene {
             selectedTop = capSleeveShirt
         } else if cottonTshirt.contains(pos) && cottonTshirt.alpha == 1{
             cottonTshirt.alpha = 0
-            // selectedTop = cottonTshirt
+            selectedTop = cottonTshirt
         } else if knitPullover.contains(pos) && knitPullover.alpha == 1{
             knitPullover.alpha = 0
-            //selectedTop = knitPullover
+            selectedTop = knitPullover
         }
 
         if selectedTop != nil{

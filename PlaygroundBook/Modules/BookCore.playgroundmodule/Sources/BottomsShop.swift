@@ -3,9 +3,9 @@ import SpriteKit
 public class BottomsShop: SKScene {
 
     var selectedBottom: SKSpriteNode?
-    lazy var crepeTrousers = childNode(withName: "capSleeveShirt") as! SKSpriteNode
-    lazy var skinnyJeans = childNode(withName: "cottonTshirt") as! SKSpriteNode
-    lazy var tailorPants = childNode(withName:"knitPullover") as! SKSpriteNode
+    lazy var crepeTrousers = childNode(withName: "crepeTrousers") as! SKSpriteNode
+    lazy var skinnyJeans = childNode(withName: "skinnyJeans") as! SKSpriteNode
+    lazy var tailorPants = childNode(withName:"tailorPants") as! SKSpriteNode
     lazy var nextButton = childNode(withName:"nextButton") as! SKSpriteNode
     
     

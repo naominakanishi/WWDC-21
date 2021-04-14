@@ -10,7 +10,8 @@
 		11F7122526261C3B006D06CF /* TopsShop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F7122426261C3B006D06CF /* TopsShop.sks */; };
 		11F71242262640DA006D06CF /* BottomsShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F71241262640DA006D06CF /* BottomsShop.swift */; };
 		11F7124F26264DD0006D06CF /* TopsShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7124E26264DD0006D06CF /* TopsShop.swift */; };
-		11F71262262661CB006D06CF /* BottomsShop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F712462626410D006D06CF /* BottomsShop.sks */; };
+		11F71262262661CB006D06CF /* backup-BottomsShop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F712462626410D006D06CF /* backup-BottomsShop.sks */; };
+		11F71267262662BC006D06CF /* BottomsShop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F71266262662BC006D06CF /* BottomsShop.sks */; };
 		447A265B2600305100C533BC /* InitialRoom.sks in Resources */ = {isa = PBXBuildFile; fileRef = 447A265A2600305100C533BC /* InitialRoom.sks */; };
 		447A2678260036B500C533BC /* InitialRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447A2677260036B500C533BC /* InitialRoom.swift */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
@@ -123,8 +124,9 @@
 /* Begin PBXFileReference section */
 		11F7122426261C3B006D06CF /* TopsShop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TopsShop.sks; sourceTree = "<group>"; };
 		11F71241262640DA006D06CF /* BottomsShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomsShop.swift; sourceTree = "<group>"; };
-		11F712462626410D006D06CF /* BottomsShop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BottomsShop.sks; sourceTree = "<group>"; };
+		11F712462626410D006D06CF /* backup-BottomsShop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "backup-BottomsShop.sks"; sourceTree = "<group>"; };
 		11F7124E26264DD0006D06CF /* TopsShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopsShop.swift; sourceTree = "<group>"; };
+		11F71266262662BC006D06CF /* BottomsShop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BottomsShop.sks; sourceTree = "<group>"; };
 		447A265A2600305100C533BC /* InitialRoom.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InitialRoom.sks; sourceTree = "<group>"; };
 		447A2677260036B500C533BC /* InitialRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRoom.swift; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* MeuPlaygroundLegal.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeuPlaygroundLegal.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,7 +343,8 @@
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				447A265A2600305100C533BC /* InitialRoom.sks */,
 				11F7122426261C3B006D06CF /* TopsShop.sks */,
-				11F712462626410D006D06CF /* BottomsShop.sks */,
+				11F71266262662BC006D06CF /* BottomsShop.sks */,
+				11F712462626410D006D06CF /* backup-BottomsShop.sks */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
 				5E551EC42371FC3F00784365 /* Assets.xcassets */,
 			);
@@ -487,10 +490,11 @@
 			files = (
 				447A265B2600305100C533BC /* InitialRoom.sks in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
-				11F71262262661CB006D06CF /* BottomsShop.sks in Resources */,
+				11F71262262661CB006D06CF /* backup-BottomsShop.sks in Resources */,
 				11F7122526261C3B006D06CF /* TopsShop.sks in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
+				11F71267262662BC006D06CF /* BottomsShop.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
