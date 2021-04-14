@@ -10,7 +10,6 @@ public class TopsShop: SKScene {
     lazy var capSleeveSelected = childNode(withName: "capSleeveSelected") as! SKSpriteNode
     lazy var cottonTshirtSelect = childNode(withName: "cottonTshirtSelect") as! SKSpriteNode
     lazy var knitPulloverSelected = childNode(withName: "knitPulloverSelected") as! SKSpriteNode
-    lazy var nextButtonSelect = childNode(withName: "nextButtonSelect") as! SKSpriteNode
     
     public override func didMove(to view: SKView){
         let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
@@ -49,7 +48,6 @@ public class TopsShop: SKScene {
 
         if selectedTop != nil{
             nextButton.alpha = 1
-            nextButtonSelect.alpha = 1
         }
 
         if nextButton.contains(pos){
