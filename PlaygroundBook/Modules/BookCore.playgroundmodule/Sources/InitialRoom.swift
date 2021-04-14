@@ -11,7 +11,7 @@ public class GameScene: SKScene {
     lazy var text = balloon.childNode(withName: "text") as! SKLabelNode
     lazy var overlay = childNode(withName: "overlay") as! SKSpriteNode
     lazy var happyEarth = childNode(withName: "happyEarth") as! SKSpriteNode
-    var dialogs = ["Buying new clothes can be fun, right?", "Do you ever considered the impact your clothes' production has on the environment, though?", "Wanna try a challenge? Buy youself a new outfit, trying to make it as environmental-friendly as possible.", "For starters, pick a top item, then a bottom one. We'll then calculate your score."]
+    var dialogs = ["Buying new clothes can be fun, right?", "Do you ever consider the impact your clothes' production has on the environment, though?", "Wanna try a challenge? Buy yourself a new outfit, trying to make it as environmental-friendly as possible.", "For starters, pick a top item, then a bottom one. We'll then calculate your score."]
     
     public override func didMove(to view: SKView){
         let fadeInAction = SKAction.fadeIn(withDuration: 1)
