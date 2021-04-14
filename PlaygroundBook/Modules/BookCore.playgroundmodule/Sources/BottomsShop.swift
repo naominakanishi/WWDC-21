@@ -45,17 +45,17 @@ public class BottomsShop: SKScene {
             selectedBottom = crepeTrousers
             crepeTrousersSelect.alpha = 1
             skinnyJeansSelect.alpha = 0
-            nextButtonSelect.alpha = 0
+            tailorPantsSelect.alpha = 0
         } else if skinnyJeans.contains(pos) && skinnyJeans.alpha == 1{
             selectedBottom = skinnyJeans
             crepeTrousersSelect.alpha = 0
             skinnyJeansSelect.alpha = 1
-            nextButtonSelect.alpha = 0
+            tailorPantsSelect.alpha = 0
         } else if tailorPants.contains(pos) && tailorPants.alpha == 1{
             selectedBottom = tailorPants
             crepeTrousersSelect.alpha = 0
             skinnyJeansSelect.alpha = 0
-            nextButtonSelect.alpha = 1
+            tailorPantsSelect.alpha = 1
         }
         if selectedBottom != nil{
             nextButton.alpha = 1
