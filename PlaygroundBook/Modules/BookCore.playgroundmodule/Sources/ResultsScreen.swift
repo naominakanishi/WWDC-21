@@ -2,33 +2,35 @@ import SpriteKit
 
 public class ResultsScreen: SKScene {
     
-//    lazy var crepeTrousers = childNode(withName: "crepeTrousers") as! SKSpriteNode
-//    lazy var skinnyJeans = childNode(withName: "skinnyJeans") as! SKSpriteNode
-//    lazy var tailorPants = childNode(withName:"tailorPants") as! SKSpriteNode
-//    lazy var nextButton = childNode(withName:"nextButton") as! SKSpriteNode
-//    lazy var mannequinCapSleeves = childNode(withName: "mannequinCapSleeves") as! SKSpriteNode
-//    lazy var mannequinCottonTshirt = childNode(withName: "mannequinCottonTshirt") as! SKSpriteNode
-//    lazy var mannequinKnitPullover = childNode(withName: "mannequinKnitPullover") as! SKSpriteNode
-//    lazy var crepeTrousersSelect = childNode(withName: "crepeTrousersSelect") as! SKSpriteNode
-//    lazy var skinnyJeansSelect = childNode(withName: "skinnyJeansSelect") as! SKSpriteNode
-//    lazy var tailorPantsSelect = childNode(withName: "tailorPantsSelect") as! SKSpriteNode
-//    lazy var nextButtonSelect = childNode(withName: "nextButtonSelect") as! SKSpriteNode
+    lazy var happyEarth = childNode(withName: "happyEarth") as! SKSpriteNode
+    lazy var interactionBalloon2 = childNode(withName: "interactionBalloon2") as! SKSpriteNode
+    lazy var finalText = interactionBalloon2.childNode(withName: "finalText") as! SKLabelNode
+    var selectedLook: SKSpriteNode?
+    var dialogs = ["Picking clothes considering aspects other than the price and looks can be challenging, right?", "It's also hard to find a way to balance all aspects...",  "For instance, you can pick a piece that doesn't use much water to be produced...", "But how long will this item last?", "Depending on its durability, sometimes a piece that seems more harmful for the environment at first will end up being better in the long run."]
+    lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
+    lazy var topsLookArray = [childNode(withName: "capSleeveInfo")!, childNode(withName: "cottonTshirtInfo")!, childNode(withName: "knitPulloverInfo")!]
+    lazy var bottomsLookArray = [childNode(withName: "crepeTrousersInfo")!, childNode(withName: "skinnyJeansInfo")!, childNode(withName: "tailorPantsInfo")!]
+
+    let clothesNameIndexMap = ["capSleeveShirt": 1,
+                               "cottonTshirt": 2,
+                               "knitPullover": 3,
+                               "crepeTrousers": 1,
+                               "skinnyJeans": 2,
+                               "tailorPants": 3]
     
     public override func didMove(to view: SKView){
-//        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
-//        crepeTrousers.run(fadeInAction)
-//        skinnyJeans.run(fadeInAction)
-//        tailorPants.run(fadeInAction)
-//        if selectedTop?.name == "capSleeveShirt" {
-//            mannequinCapSleeves.alpha = 1
-//        } else if selectedTop?.name == "cottonTshirt"{
-//            mannequinCottonTshirt.alpha = 1
-//        } else if selectedTop?.name == "knitPullover"{
-//            mannequinKnitPullover.alpha = 1
-//        }
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
+        interactionBalloon2.run(fadeInAction)
+        happyEarth.run(fadeInAction)
         
+        let topIndex = clothesNameIndexMap[selectedTop!.name!]!
+        let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
+        lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 1
+        
+        topsLookArray[topIndex].alpha = 1
+        bottomsLookArray[bottomIndex].alpha = 1
     }
-
+    
     //text.text = "frase aqui"
     @objc static override public var supportsSecureCoding: Bool {
         // SKNode conforms to NSSecureCoding, so any subclass going

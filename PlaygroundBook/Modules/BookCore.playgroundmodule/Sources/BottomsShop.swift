@@ -1,8 +1,8 @@
 import SpriteKit
+public var selectedBottom: SKSpriteNode?
 
 public class BottomsShop: SKScene {
     
-    var selectedBottom: SKSpriteNode?
     lazy var crepeTrousers = childNode(withName: "crepeTrousers") as! SKSpriteNode
     lazy var skinnyJeans = childNode(withName: "skinnyJeans") as! SKSpriteNode
     lazy var tailorPants = childNode(withName:"tailorPants") as! SKSpriteNode
@@ -58,14 +58,14 @@ public class BottomsShop: SKScene {
         }
         if selectedBottom != nil{
             nextButton.alpha = 1
-            
         }
-//        if nextButton.alpha == 1{
-//            if let nextGameScene = GameScene3(fileNamed: "GameScene3") {
-//              nextGameScene.scaleMode = .aspectFit
-//              self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
-//            }
-//        }
+
+        if nextButton.contains(pos){
+            if let nextGameScene = ResultsScreen(fileNamed: "ResultsScreen") {
+              nextGameScene.scaleMode = .aspectFit
+              self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
+            }
+        }
   }
     
     func touchMoved(toPoint pos : CGPoint) {
