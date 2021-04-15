@@ -6,7 +6,7 @@ public class ResultsScreen: SKScene {
     lazy var interactionBalloon2 = childNode(withName: "interactionBalloon2") as! SKSpriteNode
     lazy var finalText = interactionBalloon2.childNode(withName: "finalText") as! SKLabelNode
     var selectedLook: SKSpriteNode?
-    var dialogs = ["Picking clothes considering aspects other than the price and looks can be challenging, right?", "It's also hard to find a way to balance all aspects...",  "For instance, you can pick a piece that doesn't use much water to be produced...", "But how long will this item last?", "Depending on its durability, sometimes a piece that seems more harmful for the environment at first will end up being better in the long run."]
+    var firstDialogs = ["Sometimes we are tempted to consider only how things look and its price, but that can be very harmful for the environment.", "Finding the balance between all aspects can be very challenging, but don't worry, I'm here to give you a hand.", "In summary, we have to consider two aspects: how durable that piece is, and the harms they cause.", "Even though some pieces seem to be less harmful at first...", "...in the long run, when we take into account how long it'll last, it might cause more damage than another that seems more pollutant.", "The same logic applies to the cost.", "Which pair of pants do you think have the best cost-benefit ratio?"]
     lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
     lazy var topsLookArray = [childNode(withName: "capSleeveInfo")!, childNode(withName: "cottonTshirtInfo")!, childNode(withName: "knitPulloverInfo")!]
     lazy var bottomsLookArray = [childNode(withName: "crepeTrousersInfo")!, childNode(withName: "skinnyJeansInfo")!, childNode(withName: "tailorPantsInfo")!]
@@ -42,35 +42,15 @@ public class ResultsScreen: SKScene {
 
     // Lets the user select a bottom item and allows clicking on the "next" button.
   func touchDown(atPoint pos : CGPoint) {
-//        if crepeTrousers.contains(pos) && crepeTrousers.alpha == 1{
-//            selectedBottom = crepeTrousers
-//            crepeTrousersSelect.alpha = 1
-//            skinnyJeansSelect.alpha = 0
-//            tailorPantsSelect.alpha = 0
-//        } else if skinnyJeans.contains(pos) && skinnyJeans.alpha == 1{
-//            selectedBottom = skinnyJeans
-//            crepeTrousersSelect.alpha = 0
-//            skinnyJeansSelect.alpha = 1
-//            tailorPantsSelect.alpha = 0
-//        } else if tailorPants.contains(pos) && tailorPants.alpha == 1{
-//            selectedBottom = tailorPants
-//            crepeTrousersSelect.alpha = 0
-//            skinnyJeansSelect.alpha = 0
-//            tailorPantsSelect.alpha = 1
-//        }
-//        if selectedBottom != nil{
-//            nextButton.alpha = 1
-//            nextButtonSelect.alpha = 1
-//
-//        }
-//        if nextButton.alpha == 1{
-//            if let nextGameScene = GameScene3(fileNamed: "GameScene3") {
-//              nextGameScene.scaleMode = .aspectFit
-//              self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
-//            }
-//        }
+    if interactionBalloon2.contains(pos){
+    finalText.text = firstDialogs.first
+    if firstDialogs.isEmpty {
+        finalText.removeFromParent()
+        } else {
+        firstDialogs.remove(at: 0)
+        }
+    }
   }
-    
     func touchMoved(toPoint pos : CGPoint) {
       
     }

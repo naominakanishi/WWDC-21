@@ -20,3 +20,4 @@ if let scene = GameScene(fileNamed: "GameScene") {
 
 PlaygroundPage.current.liveView = sceneView
 PlaygroundPage.current.needsIndefiniteExecution = true
+
