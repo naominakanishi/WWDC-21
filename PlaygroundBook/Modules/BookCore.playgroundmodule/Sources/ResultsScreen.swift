@@ -27,8 +27,8 @@ public class ResultsScreen: SKScene {
         let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
         lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 1
         
-        topsLookArray[topIndex].alpha = 1
-        bottomsLookArray[bottomIndex].alpha = 1
+        topsLookArray[topIndex - 1].alpha = 1
+        bottomsLookArray[bottomIndex - 1].alpha = 1
     }
     
     //text.text = "frase aqui"
