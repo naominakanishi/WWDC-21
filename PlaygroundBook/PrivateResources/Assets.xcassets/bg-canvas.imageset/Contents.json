@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "mannequin-min.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "background-stores-min.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "tops-bg-min.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "tops-bg.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
