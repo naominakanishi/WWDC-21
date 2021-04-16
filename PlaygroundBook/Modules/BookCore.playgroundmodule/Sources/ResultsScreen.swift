@@ -49,6 +49,7 @@ public class ResultsScreen: SKScene {
         } else {
         firstDialogs.remove(at: 0)
         }
+        
     }
   }
     func touchMoved(toPoint pos : CGPoint) {
