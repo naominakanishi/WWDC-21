@@ -8,7 +8,7 @@ public class TopsShop: SKScene {
     lazy var knitPullover = childNode(withName:"knitPullover") as! SKSpriteNode
     lazy var nextButton = childNode(withName:"nextButton") as! SKSpriteNode
     lazy var capSleeveSelected = childNode(withName: "capSleeveSelected") as! SKSpriteNode
-    lazy var cottonTshirtSelect = childNode(withName: "cottonTshirtSelect") as! SKSpriteNode
+    lazy var cottonTshirtSelected = childNode(withName: "cottonTshirtSelected") as! SKSpriteNode
     lazy var knitPulloverSelected = childNode(withName: "knitPulloverSelected") as! SKSpriteNode
     
     public override func didMove(to view: SKView){
@@ -32,17 +32,17 @@ public class TopsShop: SKScene {
         if capSleeveShirt.contains(pos) && capSleeveShirt.alpha == 1{
             selectedTop = capSleeveShirt
             capSleeveSelected.alpha = 1
-            cottonTshirtSelect.alpha = 0
+            cottonTshirtSelected.alpha = 0
             knitPulloverSelected.alpha = 0
         } else if cottonTshirt.contains(pos) && cottonTshirt.alpha == 1{
             selectedTop = cottonTshirt
             capSleeveSelected.alpha = 0
-            cottonTshirtSelect.alpha = 1
+            cottonTshirtSelected.alpha = 1
             knitPulloverSelected.alpha = 0
         } else if knitPullover.contains(pos) && knitPullover.alpha == 1{
             selectedTop = knitPullover
             capSleeveSelected.alpha = 0
-            cottonTshirtSelect.alpha = 0
+            cottonTshirtSelected.alpha = 0
             knitPulloverSelected.alpha = 1
         }
 
