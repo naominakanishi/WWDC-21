@@ -10,7 +10,7 @@ public class ResultsScreen: SKScene {
     lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
     lazy var topsLookArray = [childNode(withName: "capSleeveInfo")!, childNode(withName: "cottonTshirtInfo")!, childNode(withName: "knitPulloverInfo")!]
     lazy var bottomsLookArray = [childNode(withName: "crepeTrousersInfo")!, childNode(withName: "skinnyJeansInfo")!, childNode(withName: "tailorPantsInfo")!]
-
+    
     let clothesNameIndexMap = ["capSleeveShirt": 1,
                                "cottonTshirt": 2,
                                "knitPullover": 3,
@@ -39,45 +39,48 @@ public class ResultsScreen: SKScene {
             return true
         }
     }
-
+    
     // Lets the user select a bottom item and allows clicking on the "next" button.
-  func touchDown(atPoint pos : CGPoint) {
-    if interactionBalloon2.contains(pos){
-    finalText.text = firstDialogs.first
-    if firstDialogs.isEmpty {
-        finalText.removeFromParent()
-        } else {
-        firstDialogs.remove(at: 0)
+    func touchDown(atPoint pos : CGPoint) {
+        if interactionBalloon2.contains(pos){
+            finalText.text = firstDialogs.first
+            if firstDialogs.isEmpty {
+                finalText.removeFromParent()
+            } else {
+                firstDialogs.remove(at: 0)
+            }
+            
         }
+        //finds the time to control what's in the info board
+        if firstDialogs.count == 5{
+            
+        }
+    }
+    func touchMoved(toPoint pos : CGPoint) {
         
     }
-  }
-    func touchMoved(toPoint pos : CGPoint) {
-      
-    }
-
+    
     func touchUp(atPoint pos : CGPoint) {
-      
+        
     }
-
+    
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchDown(atPoint: t.location(in: self)) }
     }
-
+    
     override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchMoved(toPoint: t.location(in: self)) }
     }
-
+    
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchUp(atPoint: t.location(in: self)) }
     }
-
+    
     override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchUp(atPoint: t.location(in: self)) }
     }
-
+    
     override public func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
 }
-
