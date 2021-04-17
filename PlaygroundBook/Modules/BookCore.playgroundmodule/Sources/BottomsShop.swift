@@ -13,20 +13,20 @@ public class BottomsShop: SKScene {
     lazy var crepeTrousersSelect = childNode(withName: "crepeTrousersSelect") as! SKSpriteNode
     lazy var skinnyJeansSelect = childNode(withName: "skinnyJeansSelect") as! SKSpriteNode
     lazy var tailorPantsSelect = childNode(withName: "tailorPantsSelect") as! SKSpriteNode
+    lazy var mannequinArray = [childNode(withName: "1-1-mannequin")!, childNode(withName: "1-2-mannequin")!, childNode(withName: "1-3-mannequin")!, childNode(withName: "2-1-mannequin")!, childNode(withName: "2-2-mannequin")!, childNode(withName: "2-3-mannequin")!, childNode(withName: "3-1-mannequin")!, childNode(withName: "3-2-mannequin")!, childNode(withName: "3-3-mannequin")!]
+   
+    let clothesNameIndexMap = ["capSleeveShirt": 1,
+                               "cottonTshirt": 2,
+                               "knitPullover": 3,
+                               "crepeTrousers": 1,
+                               "skinnyJeans": 2,
+                               "tailorPants": 3]
     
     public override func didMove(to view: SKView){
         let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
         crepeTrousers.run(fadeInAction)
         skinnyJeans.run(fadeInAction)
         tailorPants.run(fadeInAction)
-//        if selectedTop?.name == "capSleeveShirt" {
-//            mannequinCapSleeves.alpha = 1
-//        } else if selectedTop?.name == "cottonTshirt"{
-//            mannequinCottonTshirt.alpha = 1
-//        } else if selectedTop?.name == "knitPullover"{
-//            mannequinKnitPullover.alpha = 1
-//        }
-        
     }
 
     //text.text = "frase aqui"
@@ -59,6 +59,11 @@ public class BottomsShop: SKScene {
         if selectedBottom != nil{
             nextButton.alpha = 1
         }
+        // retrieves information on which top and bottom were selected and displays the correct look on screen
+        let topIndex = clothesNameIndexMap[selectedTop!.name!]!
+        let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
+        mannequinArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("mannequin")"})?.alpha = 1
+
 
         if nextButton.contains(pos){
             if let nextGameScene = ResultsScreen(fileNamed: "ResultsScreen") {
