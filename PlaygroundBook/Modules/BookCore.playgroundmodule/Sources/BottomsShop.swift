@@ -19,13 +19,13 @@ public class BottomsShop: SKScene {
         crepeTrousers.run(fadeInAction)
         skinnyJeans.run(fadeInAction)
         tailorPants.run(fadeInAction)
-        if selectedTop?.name == "capSleeveShirt" {
-            mannequinCapSleeves.alpha = 1
-        } else if selectedTop?.name == "cottonTshirt"{
-            mannequinCottonTshirt.alpha = 1
-        } else if selectedTop?.name == "knitPullover"{
-            mannequinKnitPullover.alpha = 1
-        }
+//        if selectedTop?.name == "capSleeveShirt" {
+//            mannequinCapSleeves.alpha = 1
+//        } else if selectedTop?.name == "cottonTshirt"{
+//            mannequinCottonTshirt.alpha = 1
+//        } else if selectedTop?.name == "knitPullover"{
+//            mannequinKnitPullover.alpha = 1
+//        }
         
     }
 
