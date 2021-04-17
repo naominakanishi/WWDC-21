@@ -7,6 +7,8 @@ public class ResultsScreen: SKScene {
     lazy var finalText = interactionBalloon2.childNode(withName: "finalText") as! SKLabelNode
     lazy var scoreTitles = childNode(withName: "scoreTitles") as! SKSpriteNode
     lazy var divider = childNode(withName: "divider") as! SKSpriteNode
+    lazy var priceTag = childNode(withName: "priceTag") as! SKSpriteNode
+    lazy var firstComparisonClothes = childNode(withName: "firstComparisonClothes") as! SKSpriteNode
     var selectedLook: SKSpriteNode?
     var firstDialogs = [//#1
                         "Sometimes we are tempted to consider only how things look and its price, but that can be very harmful for the environment.",
@@ -42,7 +44,9 @@ public class ResultsScreen: SKScene {
                         "Always remember: the most sustainable clothes are the ones are that are already in our world."]
     
     lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
-    lazy var scoreArray = [childNode(withName: "1-1-price")!, childNode(withName: "1-2-price")!, childNode(withName: "1-3-price")!, childNode(withName: "2-1-price")!, childNode(withName: "2-2-price")!, childNode(withName: "2-3-price")!, childNode(withName: "3-1-price")!, childNode(withName: "3-2-price")!, childNode(withName: "3-3-price")!]
+    
+    lazy var priceArray = [priceTag.childNode(withName: "1-1-price")!, priceTag.childNode(withName: "1-2-price")!, priceTag.childNode(withName: "1-3-price")!, priceTag.childNode(withName: "2-1-price")!, priceTag.childNode(withName: "2-2-price")!, priceTag.childNode(withName: "2-3-price")!, priceTag.childNode(withName: "3-1-price")!, priceTag.childNode(withName: "3-2-price")!, priceTag.childNode(withName: "3-3-price")!]
+    
     lazy var topsLookArray = [childNode(withName: "capSleeveInfo")!, childNode(withName: "cottonTshirtInfo")!, childNode(withName: "knitPulloverInfo")!]
     lazy var bottomsLookArray = [childNode(withName: "crepeTrousersInfo")!, childNode(withName: "skinnyJeansInfo")!, childNode(withName: "tailorPantsInfo")!]
     
@@ -62,7 +66,7 @@ public class ResultsScreen: SKScene {
         let topIndex = clothesNameIndexMap[selectedTop!.name!]!
         let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
         lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 1
-        scoreArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("price")"})?.alpha = 1
+        priceArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("price")"})?.alpha = 1
         
         // uses previous information to display correct information about each piece
         topsLookArray[topIndex - 1].alpha = 1
@@ -90,19 +94,19 @@ public class ResultsScreen: SKScene {
             
         }
         //finds the time to control what's in the info board
-        if firstDialogs.count == 13{
+        if firstDialogs.count == 13{ // at sentence #3
             let topIndex = clothesNameIndexMap[selectedTop!.name!]!
             let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
-            scoreArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("score")"})?.alpha = 0
             topsLookArray[topIndex - 1].alpha = 0
             bottomsLookArray[bottomIndex - 1].alpha = 0
             scoreTitles.alpha = 0
             divider.alpha = 0
+            lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 0
+            priceTag.alpha = 0
         }
-        if firstDialogs.count == 12{
-            //let topIndex = clothesNameIndexMap[selectedTop!.name!]!
-            //let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
-
+        if firstDialogs.count == 11{ // at sentence #5
+            firstComparisonClothes.alpha = 1
+            
         }
     }
     

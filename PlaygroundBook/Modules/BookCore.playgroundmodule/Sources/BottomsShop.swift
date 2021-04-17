@@ -13,7 +13,7 @@ public class BottomsShop: SKScene {
     lazy var crepeTrousersSelect = childNode(withName: "crepeTrousersSelect") as! SKSpriteNode
     lazy var skinnyJeansSelect = childNode(withName: "skinnyJeansSelect") as! SKSpriteNode
     lazy var tailorPantsSelect = childNode(withName: "tailorPantsSelect") as! SKSpriteNode
-    lazy var mannequinArray = [childNode(withName: "1-1-mannequin")!, childNode(withName: "1-2-mannequin")!, childNode(withName: "1-3-mannequin")!, childNode(withName: "2-1-mannequin")!, childNode(withName: "2-2-mannequin")!, childNode(withName: "2-3-mannequin")!, childNode(withName: "3-1-mannequin")!, childNode(withName: "3-2-mannequin")!, childNode(withName: "3-3-mannequin")!]
+    lazy var mannequinArray = [childNode(withName: "1-0-mannequin")!, childNode(withName: "2-0-mannequin")!, childNode(withName: "3-0-mannequin")!, childNode(withName: "1-1-mannequin")!, childNode(withName: "1-2-mannequin")!, childNode(withName: "1-3-mannequin")!, childNode(withName: "2-1-mannequin")!, childNode(withName: "2-2-mannequin")!, childNode(withName: "2-3-mannequin")!, childNode(withName: "3-1-mannequin")!, childNode(withName: "3-2-mannequin")!, childNode(withName: "3-3-mannequin")!]
    
     let clothesNameIndexMap = ["capSleeveShirt": 1,
                                "cottonTshirt": 2,
@@ -27,6 +27,10 @@ public class BottomsShop: SKScene {
         crepeTrousers.run(fadeInAction)
         skinnyJeans.run(fadeInAction)
         tailorPants.run(fadeInAction)
+        
+        let topIndex = clothesNameIndexMap[selectedTop!.name!]!
+        let bottomIndex = 0
+        mannequinArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("mannequin")"})?.alpha = 1
     }
 
     //text.text = "frase aqui"
@@ -59,6 +63,7 @@ public class BottomsShop: SKScene {
         if selectedBottom != nil{
             nextButton.alpha = 1
         }
+        mannequinArray.forEach({node in node.alpha = 0})
         // retrieves information on which top and bottom were selected and displays the correct look on screen
         let topIndex = clothesNameIndexMap[selectedTop!.name!]!
         let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
