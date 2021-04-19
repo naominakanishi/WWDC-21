@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1160E10F262B664F00A4A63F /* main-room-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1160E10E262B664F00A4A63F /* main-room-bg.png */; };
+		118780C5262D3BDE007206E3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118780C4262D3BDE007206E3 /* Models.swift */; };
+		118780CA262D3D4A007206E3 /* codigodopastre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118780C9262D3D4A007206E3 /* codigodopastre.swift */; };
+		118780CF262D3D6A007206E3 /* FinalScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 118780CE262D3D6A007206E3 /* FinalScreen.sks */; };
 		11BB7611262772AC0080A86A /* ResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB7610262772AC0080A86A /* ResultsScreen.swift */; };
 		11BB7616262772D20080A86A /* ResultsScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11BB7615262772D20080A86A /* ResultsScreen.sks */; };
 		11F7122526261C3B006D06CF /* TopsShop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F7122426261C3B006D06CF /* TopsShop.sks */; };
@@ -125,6 +128,9 @@
 
 /* Begin PBXFileReference section */
 		1160E10E262B664F00A4A63F /* main-room-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-room-bg.png"; sourceTree = "<group>"; };
+		118780C4262D3BDE007206E3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		118780C9262D3D4A007206E3 /* codigodopastre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codigodopastre.swift; sourceTree = "<group>"; };
+		118780CE262D3D6A007206E3 /* FinalScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FinalScreen.sks; sourceTree = "<group>"; };
 		11BB7610262772AC0080A86A /* ResultsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsScreen.swift; sourceTree = "<group>"; };
 		11BB7615262772D20080A86A /* ResultsScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ResultsScreen.sks; sourceTree = "<group>"; };
 		11F7122426261C3B006D06CF /* TopsShop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TopsShop.sks; sourceTree = "<group>"; };
@@ -301,6 +307,8 @@
 				11F7124E26264DD0006D06CF /* TopsShop.swift */,
 				11F71241262640DA006D06CF /* BottomsShop.swift */,
 				11BB7610262772AC0080A86A /* ResultsScreen.swift */,
+				118780C4262D3BDE007206E3 /* Models.swift */,
+				118780C9262D3D4A007206E3 /* codigodopastre.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -353,6 +361,7 @@
 				11BB7615262772D20080A86A /* ResultsScreen.sks */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
 				5E551EC42371FC3F00784365 /* Assets.xcassets */,
+				118780CE262D3D6A007206E3 /* FinalScreen.sks */,
 			);
 			path = PrivateResources;
 			sourceTree = "<group>";
@@ -496,6 +505,7 @@
 			files = (
 				1160E10F262B664F00A4A63F /* main-room-bg.png in Resources */,
 				447A265B2600305100C533BC /* InitialRoom.sks in Resources */,
+				118780CF262D3D6A007206E3 /* FinalScreen.sks in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				11BB7616262772D20080A86A /* ResultsScreen.sks in Resources */,
 				11F7122526261C3B006D06CF /* TopsShop.sks in Resources */,
@@ -578,6 +588,8 @@
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 				11BB7611262772AC0080A86A /* ResultsScreen.swift in Sources */,
 				11F7124F26264DD0006D06CF /* TopsShop.swift in Sources */,
+				118780CA262D3D4A007206E3 /* codigodopastre.swift in Sources */,
+				118780C5262D3BDE007206E3 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
