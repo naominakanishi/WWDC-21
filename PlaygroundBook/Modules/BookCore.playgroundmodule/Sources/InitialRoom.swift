@@ -29,11 +29,11 @@ public class GameScene: SKScene {
 
     // Shows first balloon with message "Hi" (default)
     func touchDown(atPoint pos : CGPoint) {
-        let fadeInAction = SKAction.fadeIn(withDuration: 1)
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.3)
         balloon.run(fadeInAction)
         
         // verifies if user touched balloon area
-        if balloon.contains(pos) && balloon.alpha == 1{
+        if balloon.alpha == 1{
             text.text = dialogs.first
             if dialogs.isEmpty {
                 balloon.removeFromParent()
