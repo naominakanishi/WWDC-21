@@ -28,7 +28,9 @@ public class BottomsShop: SKScene {
         skinnyJeans.run(fadeInAction)
         tailorPants.run(fadeInAction)
         
-        let topIndex = clothesNameIndexMap[selectedTop!.name!]!
+        guard let selectedTopName = selectedTop?.name,
+        let topIndex = clothesNameIndexMap[selectedTopName]
+        else { return }
         let bottomIndex = 0
         mannequinArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("mannequin")"})?.alpha = 1
     }

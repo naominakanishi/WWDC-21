@@ -45,6 +45,8 @@ public class ResultsScreen: SKScene {
     
     lazy var scoreArray = [childNode(withName: "1-1-score")!, childNode(withName: "1-2-score")!, childNode(withName: "1-3-score")!, childNode(withName: "2-1-score")!, childNode(withName: "2-2-score")!, childNode(withName: "2-3-score")!, childNode(withName: "3-1-score")!, childNode(withName: "3-2-score")!, childNode(withName: "3-3-score")!]
     
+    lazy var bestOptionPrice = priceTag.childNode(withName: "2-3-price") as! SKLabelNode
+    lazy var worstOptionPrice = priceTag.childNode(withName: "1-2-price") as! SKLabelNode
 
     lazy var clothesNameIndexMap = ["capSleeveShirt": 1,
                                "cottonTshirt": 2,
@@ -69,7 +71,7 @@ public class ResultsScreen: SKScene {
     // variables for animating scores
     lazy var scoreA = childNode(withName: "2-3-score") as! SKSpriteNode
     lazy var scoreB = childNode(withName: "1-2-score") as! SKSpriteNode
-   // lazy var scoreC = lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("score")"}) as! SKSpriteNode
+    lazy var scoreC = scoreArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("score")"}) as! SKSpriteNode
     
     // end of animation vars
 
@@ -83,7 +85,7 @@ public class ResultsScreen: SKScene {
         let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
         priceArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("price")"})?.alpha = 1
         imageC.alpha = 1
-      //  scoreC.alpha = 1
+        scoreC.alpha = 1
         
         
 //        // retrieves information on which top and bottom were selected and displays the correct look on screen
@@ -116,54 +118,28 @@ public class ResultsScreen: SKScene {
             }
         }
         //finds the time to control what's in the info board
-            if touchCount == 6{ // at sentence #3
-//            let topIndex = clothesNameIndexMap[selectedTop!.name!]!
-//            let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
-//            scoreTitles.alpha = 0
-//            lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 0
-//            priceTag.alpha = 0
-            if touchCount % 3 == 0 {
+        
+        if touchCount == 6 || touchCount == 9{ // at sentence #3
+            if touchCount == 6 {
                 rotateCards(imageA, imageB, imageC)
                 imageA.zPosition = 0
                 imageB.zPosition = 1000
                 imageC.zPosition = 0
+                priceArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("price")"})?.alpha = 0
+                worstOptionPrice.alpha = 1
+                rotateCards(scoreA, scoreB, scoreC, shouldRescale: false)
             }
-            else if touchCount % 3 == 1 {
+            
+            else if touchCount == 9 {
                 rotateCards(imageC, imageA, imageB)
                 imageA.zPosition = 100
                 imageB.zPosition = 000
                 imageC.zPosition = 0
-            }
-            else if touchCount % 3 ==  2 {
-                rotateCards(imageB, imageC, imageA)
-                
-                imageA.zPosition = 0
-                imageB.zPosition = 000
-                imageC.zPosition = 100
+                worstOptionPrice.alpha = 0
+                bestOptionPrice.alpha = 1
+                rotateCards(scoreC, scoreA, scoreB, shouldRescale: false)
             }
         }
-
-                
-//        if touchCount % 3 == 0 {
-//            rotateCards(imageA, imageB, imageC)
-//            imageA.zPosition = 0
-//            imageB.zPosition = 1000
-//            imageC.zPosition = 0
-//        }
-//        else if touchCount % 3 == 1 {
-//            rotateCards(imageC, imageA, imageB)
-//            imageA.zPosition = 100
-//            imageB.zPosition = 000
-//            imageC.zPosition = 0
-//        }
-//        else if touchCount % 3 ==  2 {
-//            rotateCards(imageB, imageC, imageA)
-//
-//            imageA.zPosition = 0
-//            imageB.zPosition = 000
-//            imageC.zPosition = 100
-//        }
-//       touchCount += 1
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -190,7 +166,7 @@ public class ResultsScreen: SKScene {
         for t in touches { touchUp(atPoint: t.location(in: self)) }
     }
     
-    func rotateCards(_ imageA: SKSpriteNode, _ imageB: SKSpriteNode, _ imageC: SKSpriteNode) {
+    func rotateCards(_ imageA: SKSpriteNode, _ imageB: SKSpriteNode, _ imageC: SKSpriteNode, shouldRescale: Bool = true) {
             let toA: CGPoint = .init(
                 x: imageA.position.x,
                 y: imageA.position.y)
@@ -204,11 +180,11 @@ public class ResultsScreen: SKScene {
             imageA.run(.move(to: toB, duration: duration))
             imageB.run(.group([
                 .fadeIn(withDuration: duration),
-                .scale(to: 1, duration: duration),
+                shouldRescale ? .scale(to: 1, duration: duration) : .run {},
                 .move(to: toC, duration: duration)
             ]))
             imageC.run(.group([
-                .scale(to: 0.6, duration: duration),
+                shouldRescale ? .scale(to: 0.6, duration: duration) : .run {},
                 .fadeAlpha(to: 0.5, duration: duration),
                 .move(to: toA, duration: duration)
             ]))
