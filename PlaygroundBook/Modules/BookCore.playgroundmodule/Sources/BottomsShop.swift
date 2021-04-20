@@ -73,12 +73,23 @@ public class BottomsShop: SKScene {
             mannequinArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("mannequin")"})?.alpha = 1
 
 
-            if nextButton.contains(pos){
-                if let nextGameScene = ResultsScreen(fileNamed: "ResultsScreen") {
+        if nextButton.contains(pos) && selectedTop?.name == "cottonTshirt" && selectedBottom?.name == "tailorPants"{
+                if let nextGameScene = BestResultsScreen(fileNamed: "BestResultsScreen") {
                   nextGameScene.scaleMode = .aspectFit
                   self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
                 }
+        }else if nextButton.contains(pos) && selectedTop?.name == "capSleeveShirt" && selectedBottom?.name == "skinnyJeans"{
+            if let nextGameScene = WorstResultsScreen(fileNamed: "WorstResultsScreen") {
+              nextGameScene.scaleMode = .aspectFit
+              self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
             }
+        }else if nextButton.contains(pos) {
+            if let nextGameScene = ResultsScreen(fileNamed: "ResultsScreen") {
+              nextGameScene.scaleMode = .aspectFit
+              self.scene?.view?.presentScene(nextGameScene, transition: SKTransition.fade(withDuration: TimeInterval(1)))
+            }
+        }
+        
         }
   }
     
