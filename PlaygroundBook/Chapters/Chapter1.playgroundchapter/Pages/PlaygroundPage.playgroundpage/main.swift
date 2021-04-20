@@ -25,3 +25,10 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 //#-end-hidden-code
 
+/*:
+ # **Eco Valore**
+ * note: This
+ 
+ This Playground Book works only on iPad Air 4th and 5th generation, pro 1st gen
+ 
+ */

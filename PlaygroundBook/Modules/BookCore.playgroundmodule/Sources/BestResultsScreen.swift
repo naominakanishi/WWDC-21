@@ -35,15 +35,12 @@ public class BestResultsScreen: SKScene {
                         //#12
                         "Clothes with longer durability also open doors to thrift shopping.",
                         //#13
-                        "Thrift shopping is an amazing solution for people who can't afford these items, and also for people who like changing their closet every one in a while.",
+                        "Thrift shopping is an amazing solution for people who can't afford these items, and also for people who like changing their closet every once in a while.",
                         //#14
-                        "Always remember: the most sustainable clothes are the ones that are already on our world."]
-    
-//    lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
-//
-//    lazy var priceArray = [priceTag.childNode(withName: "1-1-price")!, priceTag.childNode(withName: "1-2-price")!, priceTag.childNode(withName: "1-3-price")!, priceTag.childNode(withName: "2-1-price")!, priceTag.childNode(withName: "2-2-price")!, priceTag.childNode(withName: "2-3-price")!, priceTag.childNode(withName: "3-1-price")!, priceTag.childNode(withName: "3-2-price")!, priceTag.childNode(withName: "3-3-price")!]
-    
-//    lazy var scoreArray = [childNode(withName: "1-1-score")!, childNode(withName: "1-2-score")!, childNode(withName: "1-3-score")!, childNode(withName: "2-1-score")!, childNode(withName: "2-2-score")!, childNode(withName: "2-3-score")!, childNode(withName: "3-1-score")!, childNode(withName: "3-2-score")!, childNode(withName: "3-3-score")!]
+                        "Always remember: the most sustainable clothes are the ones that are already on our world.",
+                        //#15
+                        "Thank you for your time! :)"]
+
     
     lazy var bestOptionPrice = priceTag.childNode(withName: "2-3-price") as! SKLabelNode
     lazy var worstOptionPrice = priceTag.childNode(withName: "1-2-price") as! SKLabelNode
@@ -81,7 +78,7 @@ public class BestResultsScreen: SKScene {
         happyEarth.run(fadeInAction)
         
         bestOptionPrice.alpha = 1
-        scoreB.alpha = 1
+        scoreA.alpha = 1
         
         
 //        // retrieves information on which top and bottom were selected and displays the correct look on screen
@@ -107,9 +104,7 @@ public class BestResultsScreen: SKScene {
         touchCount += 1
         if finalBalloon.contains(pos){
             finalText.text = otherOptions.first
-            if otherOptions.isEmpty {
-                finalText.removeFromParent()
-            } else {
+            if otherOptions.count > 1 {
                 otherOptions.remove(at: 0)
             }
         }
@@ -131,7 +126,7 @@ public class BestResultsScreen: SKScene {
                 imageB.zPosition = 100
                 worstOptionPrice.alpha = 0
                 bestOptionPrice.alpha = 1
-                rotateCards(scoreA, scoreB, shouldRescale: false)
+                rotateCards(scoreB, scoreA, shouldRescale: false)
             }
         }
     }

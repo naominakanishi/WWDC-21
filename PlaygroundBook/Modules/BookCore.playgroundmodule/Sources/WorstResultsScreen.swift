@@ -12,7 +12,6 @@ public class WorstResultsScreen: SKScene {
 
     var otherOptions = [//#1
                         "Uh-oh... Looks like you've picked the worst possible outfit!",
-                        
                         //#2
                         "Don't worry, though. I'm here to help you.",
                         //#3:
@@ -20,17 +19,17 @@ public class WorstResultsScreen: SKScene {
                         // #4
                         "A way to calculate the eco-friendly level of an outfit is to balance the positive and negative aspects.",
                         //#5:
-                        "The positive ones are the labor conditions and durability: the more points, the merrier.",
+                        "The positive ones are labor conditions and durability: the more points, the merrier.",
                         //#6:
                         "The negative ones are CO2 emission and water consumption. Here, the more, the worse.",
-                        //#7: switch here.
-                        "Keeping this in mind, a bad combination would be this outfit.",
+                        //#7:
+                        "Keeping this in mind, the outfit you've picked is not great for the environment.",
                         //#8:
                         "It might not seem too harmful at first, but it has rather low durability and was produced under poor labor conditions.",
                         //#9:
-                        "In addition, some fabrics don't last very long, making people repurchase items over and over, multiplying the environmental impact.",
-                        //#10: switch again
-                        "Keeping this in mind, we can go back to your outfit!",
+                        "In addition, some fabrics don't last very long, which forces repurchasing items over and over, multiplying the environmental impact.",
+                        //#10: switch here
+                        "A good combination, however, would be this one.",
                         //#11 - wow face
                         "It might not be the cheapest option, but it can be used many times over the years!",
                         //#12
@@ -38,31 +37,22 @@ public class WorstResultsScreen: SKScene {
                         //#13
                         "Clothes with longer durability also open doors to thrift shopping.",
                         //#14
-                        "Thrift shopping is an amazing solution for people who can't afford these items, and also for people who like changing their closet every one in a while.",
+                        "Thrift shopping is an amazing solution for people who can't afford these items, and also for people who like changing their closet every once in a while.",
                         //#15
-                        "Always remember: the most sustainable clothes are the ones that are already on our world."]
+                        "Always remember: the most sustainable clothes are the ones that are already on our world.",
+                        //#16
+                        "Thank you for your time! :)"]
     
-//    lazy var lookArray = [childNode(withName: "1-1")!, childNode(withName: "1-2")!, childNode(withName: "1-3")!, childNode(withName: "2-1")!, childNode(withName: "2-2")!, childNode(withName: "2-3")!, childNode(withName: "3-1")!, childNode(withName: "3-2")!, childNode(withName: "3-3")!]
-//
-//    lazy var priceArray = [priceTag.childNode(withName: "1-1-price")!, priceTag.childNode(withName: "1-2-price")!, priceTag.childNode(withName: "1-3-price")!, priceTag.childNode(withName: "2-1-price")!, priceTag.childNode(withName: "2-2-price")!, priceTag.childNode(withName: "2-3-price")!, priceTag.childNode(withName: "3-1-price")!, priceTag.childNode(withName: "3-2-price")!, priceTag.childNode(withName: "3-3-price")!]
-    
-//    lazy var scoreArray = [childNode(withName: "1-1-score")!, childNode(withName: "1-2-score")!, childNode(withName: "1-3-score")!, childNode(withName: "2-1-score")!, childNode(withName: "2-2-score")!, childNode(withName: "2-3-score")!, childNode(withName: "3-1-score")!, childNode(withName: "3-2-score")!, childNode(withName: "3-3-score")!]
-    
+
     lazy var bestOptionPrice = priceTag.childNode(withName: "2-3-price") as! SKLabelNode
     lazy var worstOptionPrice = priceTag.childNode(withName: "1-2-price") as! SKLabelNode
 
-    lazy var clothesNameIndexMap = ["capSleeveShirt": 1,
-                               "cottonTshirt": 2,
-                               "knitPullover": 3,
-                               "crepeTrousers": 1,
-                               "skinnyJeans": 2,
-                               "tailorPants": 3]
     
     // vars for the animation
     // best case:
-    lazy var imageA = childNode(withName: "2-3") as! SKSpriteNode
+    lazy var imageA = childNode(withName: "1-2") as! SKSpriteNode
     // worst case:
-    lazy var imageB = childNode(withName: "1-2") as! SKSpriteNode
+    lazy var imageB = childNode(withName: "2-3") as! SKSpriteNode
     // selected:
 //    var topIndex :Int{clothesNameIndexMap[selectedTop!.name!]!}
 //    var bottomIndex :Int{clothesNameIndexMap[selectedBottom!.name!]!}
@@ -72,8 +62,8 @@ public class WorstResultsScreen: SKScene {
     var touchCount = 0
     
     // variables for animating scores
-    lazy var scoreA = childNode(withName: "2-3-score") as! SKSpriteNode
-    lazy var scoreB = childNode(withName: "1-2-score") as! SKSpriteNode
+    lazy var scoreA = childNode(withName: "1-2-score") as! SKSpriteNode
+    lazy var scoreB = childNode(withName: "2-3-score") as! SKSpriteNode
 //    lazy var scoreC = scoreArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("score")"}) as! SKSpriteNode
 //
     // end of animation vars
@@ -83,19 +73,8 @@ public class WorstResultsScreen: SKScene {
         finalBalloon.run(fadeInAction)
         happyEarth.run(fadeInAction)
         
-        bestOptionPrice.alpha = 1
-        scoreB.alpha = 1
-        
-        
-//        // retrieves information on which top and bottom were selected and displays the correct look on screen
-//        let topIndex = clothesNameIndexMap[selectedTop!.name!]!
-//        let bottomIndex = clothesNameIndexMap[selectedBottom!.name!]!
-//        lookArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)"})?.alpha = 1
-//        priceArray.first(where: {node in node.name! == "\(topIndex)-\(bottomIndex)-\("price")"})?.alpha = 1
-//
-//        // uses previous information to display correct information about each piece
-//        topsLookArray[topIndex - 1].alpha = 1
-//        bottomsLookArray[bottomIndex - 1].alpha = 1
+        worstOptionPrice.alpha = 1
+        scoreA.alpha = 1
     }
     
     @objc static override public var supportsSecureCoding: Bool {
@@ -110,31 +89,30 @@ public class WorstResultsScreen: SKScene {
         touchCount += 1
         if finalBalloon.contains(pos){
             finalText.text = otherOptions.first
-            if otherOptions.isEmpty {
-                finalText.removeFromParent()
-            } else {
+            if otherOptions.count > 1 {
                 otherOptions.remove(at: 0)
             }
         }
         //finds the time to control what's in the info board
         
-        if touchCount == 7 || touchCount == 9{ // at sentence #3
-            if touchCount == 6 {
+        if touchCount == 10{ // at sentence #3
+//            if touchCount == 6 {
                 rotateCards(imageA, imageB)
                 imageA.zPosition = 0
                 imageB.zPosition = 1000
                 worstOptionPrice.alpha = 1
+                bestOptionPrice.alpha = 0
                 rotateCards(scoreA, scoreB, shouldRescale: false)
-            }
+//            }
             
-            else if touchCount == 10 {
-                rotateCards(imageB, imageA)
-                imageA.zPosition = 000
-                imageB.zPosition = 100
-                worstOptionPrice.alpha = 0
-                bestOptionPrice.alpha = 1
-                rotateCards(scoreB, scoreA, shouldRescale: false)
-            }
+//            else if touchCount == 9 {
+//                rotateCards(imageB, imageA)
+//                imageA.zPosition = 000
+//                imageB.zPosition = 100
+//                worstOptionPrice.alpha = 0
+//                bestOptionPrice.alpha = 1
+//                rotateCards(scoreA, scoreB, shouldRescale: false)
+//            }
         }
     }
     
@@ -170,12 +148,19 @@ public class WorstResultsScreen: SKScene {
                 x: imageB.position.x,
                 y: imageB.position.y)
             let duration: TimeInterval = 1
-            imageA.run(.move(to: toB, duration: duration))
+        imageA.run(.group([
+                            .move(to: toB, duration: duration),
+            shouldRescale ? .scale(to: 0.6, duration: duration) : .run {},
+
+            .fadeAlpha(to: 0.5, duration: duration)
+        ]))
             imageB.run(.group([
                 .fadeIn(withDuration: duration),
                 shouldRescale ? .scale(to: 1, duration: duration) : .run {},
-                .move(to: toA, duration: duration)
+                .move(to: toA, duration: duration),
+                    .fadeAlpha(to: 1, duration: duration)
             ]))
         }
+    
 }
 

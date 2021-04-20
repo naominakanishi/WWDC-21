@@ -13,6 +13,8 @@
 		118780C5262D3BDE007206E3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118780C4262D3BDE007206E3 /* Models.swift */; };
 		118780CA262D3D4A007206E3 /* codigodopastre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118780C9262D3D4A007206E3 /* codigodopastre.swift */; };
 		11B6517C262E66E60081744D /* WorstResultsScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11B6517B262E66E60081744D /* WorstResultsScreen.sks */; };
+		11B65181262E71030081744D /* LiveView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B65180262E71030081744D /* LiveView1.swift */; };
+		11B65186262E712B0081744D /* LiveView1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11B65185262E712B0081744D /* LiveView1.sks */; };
 		11BB7611262772AC0080A86A /* ResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB7610262772AC0080A86A /* ResultsScreen.swift */; };
 		11BB7616262772D20080A86A /* ResultsScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11BB7615262772D20080A86A /* ResultsScreen.sks */; };
 		11E7A873262E601600B4F652 /* BestResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7A872262E601600B4F652 /* BestResultsScreen.swift */; };
@@ -136,6 +138,8 @@
 		118780C4262D3BDE007206E3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		118780C9262D3D4A007206E3 /* codigodopastre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codigodopastre.swift; sourceTree = "<group>"; };
 		11B6517B262E66E60081744D /* WorstResultsScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WorstResultsScreen.sks; sourceTree = "<group>"; };
+		11B65180262E71030081744D /* LiveView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView1.swift; sourceTree = "<group>"; };
+		11B65185262E712B0081744D /* LiveView1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LiveView1.sks; sourceTree = "<group>"; };
 		11BB7610262772AC0080A86A /* ResultsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsScreen.swift; sourceTree = "<group>"; };
 		11BB7615262772D20080A86A /* ResultsScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ResultsScreen.sks; sourceTree = "<group>"; };
 		11E7A872262E601600B4F652 /* BestResultsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResultsScreen.swift; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 				118780C9262D3D4A007206E3 /* codigodopastre.swift */,
 				11E7A872262E601600B4F652 /* BestResultsScreen.swift */,
 				11521498262E66B100D04B3B /* WorstResultsScreen.swift */,
+				11B65180262E71030081744D /* LiveView1.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				11B6517B262E66E60081744D /* WorstResultsScreen.sks */,
+				11B65185262E712B0081744D /* LiveView1.sks */,
 				11521490262E610100D04B3B /* BestResultsScreen.sks */,
 				1160E10E262B664F00A4A63F /* main-room-bg.png */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
@@ -515,6 +521,7 @@
 				1160E10F262B664F00A4A63F /* main-room-bg.png in Resources */,
 				447A265B2600305100C533BC /* InitialRoom.sks in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				11B65186262E712B0081744D /* LiveView1.sks in Resources */,
 				11BB7616262772D20080A86A /* ResultsScreen.sks in Resources */,
 				11F7122526261C3B006D06CF /* TopsShop.sks in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
@@ -593,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447A2678260036B500C533BC /* InitialRoom.swift in Sources */,
+				11B65181262E71030081744D /* LiveView1.swift in Sources */,
 				11E7A873262E601600B4F652 /* BestResultsScreen.swift in Sources */,
 				5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */,
 				11F71242262640DA006D06CF /* BottomsShop.swift in Sources */,
